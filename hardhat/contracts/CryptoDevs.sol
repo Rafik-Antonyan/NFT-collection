@@ -48,7 +48,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
 
         tokenIds++;
 
-        _safeMint(msg.sender, tokenIds);
+        _mint(msg.sender, tokenIds);
     }
 
     function mint() public payable onlyWhenNotPoused{
@@ -58,7 +58,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
 
         tokenIds++;
 
-        _safeMint(msg.sender, tokenIds);
+        _mint(msg.sender, tokenIds);
     }
 
     function _baseURI() internal view override returns(string memory){
