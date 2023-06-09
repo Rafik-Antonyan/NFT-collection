@@ -46,7 +46,7 @@ export default function Home() {
                 var txn = await contract.mint({
                     value: utils.parseEther("0.01")
                 })
-                console.log(txn,'---------');
+                console.log(txn, '---------');
             } else {
                 var txn = await contract.presaleMint({
                     value: utils.parseEther("0.01")
@@ -152,13 +152,6 @@ export default function Home() {
         }
         await getNumMintedTokens()
 
-        setInterval(async () => {
-            await getNumMintedTokens()
-            const started = await checkIfPresaleStarted()
-            if (started) {
-                await checkIfPresaleEnded()
-            }
-        }, 5000)
     }
 
     useEffect(() => {
